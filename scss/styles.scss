@@ -30,6 +30,10 @@ body{
             border-radius: 10px;
             margin-bottom: 32px;
         }
+        #timer, #peers{
+            font-family: 'Pacifico', sans-serif;
+            font-size: 32px;
+        }
     }
     #gameBoard{
         height: auto;

@@ -227,7 +227,10 @@
             <div id="gameInfoContainer" class="columns">
                 <div id="progressBar"></div>
                     <div class="game-info col-12" id="timeCounter">
-                        Temps restant - <span id="timer"></span>
+                        <span id="timer"></span>
+                    </div>
+                    <div class="game-info col-12" id="peerCounter">
+                        Reste à trouver <span id="peers"></span> paires 
                     </div>
             </div>
        

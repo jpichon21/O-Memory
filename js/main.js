@@ -33,6 +33,12 @@ $(document).ready(function() {
      //Dans cette fonction, on va créer notre barre de progression et notre timer  :
      function startGame(duration) {
 
+        // On mélange les cardes grâce à la propriété css order flexbox 
+        cards.forEach(card =>{
+            let randomPos = Math.floor(Math.random() *36);
+            card.style.order = randomPos;
+        });
+
         //  Les variables ci dessous nous seront utiles pour gérer le timer et la barre de progression
         var intervalSetted = null;
         var start = Date.now();
@@ -42,6 +48,9 @@ $(document).ready(function() {
             // on génère notre timer puis on l'"injecte" dans le html
             var time = duration - (((Date.now() - start) / 1000) | 0);
             $('#timer').html(time + "s");
+
+            // petit bonus, on va ajouter le nb de paires restantes dans le hmtl également !
+            $('#peers').html(peerCounter);
 
             // le rétrécissement de notre barre de progression se gère ici
             var progressBarWidth = (time * 100 / duration);
@@ -158,10 +167,7 @@ $(document).ready(function() {
 
         clickCount = 0;
         [firstCard, secondCard] = [null, null];
-
         cards.forEach(card =>{
-            let randomPos = Math.floor(Math.random() *36);
-            card.style.order = randomPos;
             card.classList.remove('flip');
             card.addEventListener('click', flipCard);
         });
