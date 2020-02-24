@@ -6,6 +6,7 @@
         <meta name="description" content="Mon petit jeu de memory pour intégrer O'Clock ;)">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- On charge des polices de sytle directement depuis le cdn google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
@@ -24,212 +25,210 @@
 
         <div id="mainContainer" class="container">
             <nav>
-                <h1>Trouve la paire !</h1>
+                <h1>Trouve les paires !</h1>
             </nav>
 
             <!-- ici notre tableau de jeu -->
             <div id="gameBoard" class="columns">
                 
-                <!-- L'attribut "data" va nous permettre de retrouver de quelle carte il s'agit -->
-                <div class="card" data-cardtype="1">
+                <!-- L'attribut "data-cardtype" va nous permettre de retrouver de quelle carte il s'agit  -->
+                <div class="card" data-cardtype="pomme">
                     <img class="front-face" src="images/card1.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="2">
+                <div class="card" data-cardtype="banane">
                     <img class="front-face" src="images/card2.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="3">
+                <div class="card" data-cardtype="orange">
                     <img class="front-face" src="images/card3.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="4">
+                <div class="card" data-cardtype="citron-vert">
                     <img class="front-face" src="images/card4.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="5">
+                <div class="card" data-cardtype="grenade">
                     <img class="front-face" src="images/card5.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="6">
+                <div class="card" data-cardtype="pêche">
                     <img class="front-face" src="images/card6.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                 
-                <div class="card" data-cardtype="7">
+                <div class="card" data-cardtype="citron">
                     <img class="front-face" src="images/card7.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
 
-                <div class="card" data-cardtype="8">
+                <div class="card" data-cardtype="fraise">
                     <img class="front-face" src="images/card8.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="9">
+                <div class="card" data-cardtype="pomme-verte">
                     <img class="front-face" src="images/card9.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
 
-                <div class="card" data-cardtype="10">
+                <div class="card" data-cardtype="abricot">
                     <img class="front-face" src="images/card10.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="11">
+                <div class="card" data-cardtype="raisin">
                     <img class="front-face" src="images/card11.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="12">
+                <div class="card" data-cardtype="pastèque">
                     <img class="front-face" src="images/card12.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="13">
+                <div class="card" data-cardtype="mûre">
                     <img class="front-face" src="images/card13.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="14">
+                <div class="card" data-cardtype="poire">
                     <img class="front-face" src="images/card14.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="15">
+                <div class="card" data-cardtype="cerise">
                     <img class="front-face" src="images/card15.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="16">
+                <div class="card" data-cardtype="framboise">
                     <img class="front-face" src="images/card16.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
                 
-                <div class="card" data-cardtype="17">
+                <div class="card" data-cardtype="mangue">
                     <img class="front-face" src="images/card17.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
                 
-                <div class="card" data-cardtype="18">
+                <div class="card" data-cardtype="mirabelles">
                     <img class="front-face" src="images/card18.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="1">
+                <div class="card" data-cardtype="pomme">
                     <img class="front-face" src="images/card1.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="2">
+                <div class="card" data-cardtype="banane">
                     <img class="front-face" src="images/card2.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="3">
+                <div class="card" data-cardtype="orange">
                     <img class="front-face" src="images/card3.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="4">
+                <div class="card" data-cardtype="citron-vert">
                     <img class="front-face" src="images/card4.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="5">
+                <div class="card" data-cardtype="grenade">
                     <img class="front-face" src="images/card5.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="6">
+                <div class="card" data-cardtype="pêche">
                     <img class="front-face" src="images/card6.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                 
-                <div class="card" data-cardtype="7">
+                <div class="card" data-cardtype="citron">
                     <img class="front-face" src="images/card7.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
 
-                <div class="card" data-cardtype="8">
+                <div class="card" data-cardtype="fraise">
                     <img class="front-face" src="images/card8.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="9">
+                <div class="card" data-cardtype="pomme-verte">
                     <img class="front-face" src="images/card9.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
 
-                <div class="card" data-cardtype="10">
+                <div class="card" data-cardtype="abricot">
                     <img class="front-face" src="images/card10.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="11">
+                <div class="card" data-cardtype="raisin">
                     <img class="front-face" src="images/card11.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="12">
+                <div class="card" data-cardtype="pastèque">
                     <img class="front-face" src="images/card12.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="13">
+                <div class="card" data-cardtype="mûre">
                     <img class="front-face" src="images/card13.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="14">
+                <div class="card" data-cardtype="poire">
                     <img class="front-face" src="images/card14.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
                
-                <div class="card" data-cardtype="15">
+                <div class="card" data-cardtype="cerise">
                     <img class="front-face" src="images/card15.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
-                <div class="card" data-cardtype="16">
+                <div class="card" data-cardtype="framboise">
                     <img class="front-face" src="images/card16.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
                 
-                <div class="card" data-cardtype="17">
+                <div class="card" data-cardtype="mangue">
                     <img class="front-face" src="images/card17.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
 
                 
-                <div class="card" data-cardtype="18">
+                <div class="card" data-cardtype="mirabelles">
                     <img class="front-face" src="images/card18.jpg" alt="face recto">
                     <img class="back-face" src="images/back-card.jpg" alt="face verso">
                 </div>
-
-
-               
+    
           
             </div>
 
+            <!-- c'est ici que l'on va insérer notre compteur temps et notre barre de progression -->
             <div id="gameInfoContainer" class="columns">
                 <div id="progressBar"></div>
-                <div class="game-info col-12" id="timeCounter">
-                    Temps restant - <span id="timer"></span>
-            
-                </div>
+                    <div class="game-info col-12" id="timeCounter">
+                        Temps restant - <span id="timer"></span>
+                    </div>
             </div>
        
         
