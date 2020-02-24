@@ -13,12 +13,8 @@ $(document).ready(function() {
     var firstCard;
     var secondCard;
 
-    //ici, notre compteur de tentatives que l'on ajoute dans notre fichier htm
-    var counter = 20;
-    document.getElementById("coup").innerHTML= counter;
-
     function flipCard() {
-        //ici, on vérifie si l'action de clic est bien récupérée puis on cherche à comprendre dans quel contexte se réfère "this" :)
+        //ici, on vérifie si l'action de clic est bien récupérée puis on cherche à comprendre à quel contexte se réfère "this" :)
         console.log("click !")
         console.log(this);
 
@@ -53,9 +49,6 @@ $(document).ready(function() {
                 firstCard.classList.remove('flip');
                 secondCard.classList.remove('flip');
                 }, 600);
-                // et on retire une tentative
-                counter --;
-                document.getElementById("coup").innerHTML= counter;
             }
 
             //On redémarre le jeu si le compteur est à zéro
@@ -74,7 +67,6 @@ $(document).ready(function() {
         [isCardFlipped] = [false];
         [firstCard, secondCard] = [null, null];
         counter = 20;
-        document.getElementById("coup").innerHTML= counter;
         cards.forEach(card =>{
             let randomPos = Math.floor(Math.random() *36);
             card.style.order = randomPos;
@@ -84,20 +76,21 @@ $(document).ready(function() {
     startGame(120);
     }
     
-
     //Ici, on va créer notre barre de progression et notre timer :
     function startGame(duration) {
         /*le temps d'une partie en secondes */
-        var totalTime = 120;
+        var totalTime = 40;
         var documentWidth = $(document).width();
         var start = Date.now();
         var intervalSetted = null;
     
         function timer() {
             var diff = duration - (((Date.now() - start) / 1000) | 0);
+
             var seconds = (diff % 60) | 0;
             seconds = seconds < 10 ? "0" + seconds : seconds;
             $('#timer').html("00:" + seconds);
+
             var progressBarWidth = (seconds * documentWidth / totalTime);
     
             $('#progressBar').css({
@@ -113,7 +106,7 @@ $(document).ready(function() {
         intervalSetted = setInterval(timer, 1000);
     }
     
-    startGame(120);
+    startGame(40);
 
 
 

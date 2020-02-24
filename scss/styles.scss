@@ -23,8 +23,15 @@ body{
         font-family: 'Roboto', sans-serif ;
         font-size: 18px;
     }
+    #gameInfoContainer{
+        #progressBar{
+            height: 6px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 32px;
+        }
+    }
     #gameBoard{
-
         height: auto;
         display: flex;
         margin: 0 auto;
