@@ -1,0 +1,62 @@
+
+body{
+    box-sizing: border-box;
+    background-color: #d35400;
+    color: #ffffff;
+}
+
+
+#mainContainer{
+    max-width: 60vw;
+    margin-top: 6vh;
+    nav{
+        h1{
+            text-align: center;
+            margin-bottom: 6vh;
+            font-family: 'Pacifico', sans-serif ;
+            font-size: 92px;
+        }
+    }
+    #gameInfoContainer, #gameBoard{
+        margin: 6vh 0vh;
+        text-align: center;
+        font-family: 'Roboto', sans-serif ;
+        font-size: 18px;
+    }
+    #gameBoard{
+
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+        .card{
+            cursor: pointer;
+            height: 106px;
+            width: 100px;
+            border: 2px solid lightblue;
+            margin: 6px;
+            border-radius: 8px;
+            border-collapse: collapse;
+            transform: scale(1);
+        &:active{
+            transform: scale(.86);
+        }
+        &.flip{
+            transition-duration: .2s;
+            .back-face{
+                display: none;
+            }
+            .front-face{
+                display: block;
+            }
+        }
+         
+        }
+        .front-face{
+            display: none;
+        }
+        .back-face{
+            display: block;
+        }
+    }
+}
+
