@@ -17,14 +17,24 @@ $(document).ready(function() {
     var firstCard;
     var secondCard;
 
-    // Ce compteur correspondra au nombre de paires à trouver :
+    // Ce compteur correspondra au nombre de paires à trouver. Dans notre cas, 18 paires : c'est un sacré gros memory !
     var peerCounter = 18;
 
     // Et celui-là au nombre de clics :
     var clickCount = 0;
- 
+
+    // Ces variables vont nous permettre de gérer le temps et la barre :
+    var time = null;
+    var progressBarWidth = null;
+    var start = null;
+    var intervalSetted = null;
+
     //  Pour démarrer la partie avec 120secondes de jeu :)
-    startGame(120);
+    duration = 120;
+
+    // Let's go !
+    startGame(duration);
+
 
     /*****************/
     /******TIMER******/
@@ -33,27 +43,30 @@ $(document).ready(function() {
      //Dans cette fonction, on va créer notre barre de progression et notre timer  :
      function startGame(duration) {
 
+        // On commence par tout "remettre à zéro", dans le cas d'une nouvelle partie
+        progressBarWidth = duration;
+        time = duration;
+
         // On mélange les cardes grâce à la propriété css order flexbox 
         cards.forEach(card =>{
             let randomPos = Math.floor(Math.random() *36);
             card.style.order = randomPos;
         });
 
-        //  Les variables ci dessous nous seront utiles pour gérer le timer et la barre de progression
-        var intervalSetted = null;
-        var start = Date.now();
+        intervalSetted = null;
+        start = Date.now();
 
         function timer() {
 
             // on génère notre timer puis on l'"injecte" dans le html
-            var time = duration - (((Date.now() - start) / 1000) | 0);
+            time = duration - (((Date.now() - start) / 1000) | 0);
             $('#timer').html(time + "s");
 
             // petit bonus, on va ajouter le nb de paires restantes dans le hmtl également !
             $('#peers').html(peerCounter);
 
             // le rétrécissement de notre barre de progression se gère ici
-            var progressBarWidth = (time * 100 / duration);
+            progressBarWidth = (time * 100 / duration);
             $('#progressBar').css({
                 width: progressBarWidth + '%'
             });
@@ -78,7 +91,6 @@ $(document).ready(function() {
 
     }
         function watchGameEnd(){
-
             //On redémarre le jeu si le compteur est à zéro
                 setTimeout(() => {    
                     alert(' Oh non ! Tu as perdu !');
@@ -153,6 +165,7 @@ $(document).ready(function() {
             if( peerCounter == 0){
                 setTimeout(() => {
                     alert('Tu as gagné !');
+                    saveWinnerTime(time, duration);
                     ResetGame();
                 }, 600);
             }
@@ -174,9 +187,45 @@ $(document).ready(function() {
 
     //et on réinitialise les valeurs   
         peerCounter = 18;
-        startGame(120);
-        duration = 120;
-        time = 0;
+        startGame(duration);
     }
 
+    /**************/
+    /****SAVE******/
+    /**************/
+
+    // On sauvegarde le temps de jeu grâce à cette requête AJAX
+    function saveWinnerTime(time, duration) {
+        var wintime = duration - time;
+        var date = new Date();
+        console.log(wintime, date);
+        var postData = {
+            "time" : wintime, 
+            "date" : date
+        };
+        $.post('savesettings.php', postData ).done(function(response) {
+            alert("Temps sauvegardé : " + response + "s" );
+        });
+        setTimeout(() => {
+            // pour afficher les temps des vainqueurs :)
+            displayWinnerTime();
+        }, 600);
+    }
+
+    /************/
+    /**DISPLAY**/
+    /************/
+
+    // On va afficher les temps des vainqueurs à l'aide de cette appel AJAX
+    function displayWinnerTime() {
+        $.ajax({   
+            type: "GET",
+            url: "getsettings.php",             
+            dataType: "html",                
+            success: function(response){                    
+                $("#winTimeContainer").html(response); 
+            }
+        });
+    };
+       
 });

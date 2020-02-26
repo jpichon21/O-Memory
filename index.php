@@ -232,6 +232,9 @@
                     <div class="game-info col-12" id="peerCounter">
                         Reste à trouver <span id="peers"></span> paires 
                     </div>
+                    <div class="game-info col-12" >Meilleurs Temps :</div>
+                    <div class="game-info col-12" id="winTimeContainer">
+                    </div>
             </div>
        
         

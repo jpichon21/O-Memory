@@ -1,3 +1,9 @@
+@import '_include-media.scss';
+
+// BREAKPOINTS
+$breakpoints: (small: 568px, medium: 768px, tablet: 800px, large: 1058px, xlarge: 1280px, xxlarge: 1900px);
+
+// STYLES
 
 body{
     box-sizing: border-box;
@@ -5,16 +11,23 @@ body{
     color: #ffffff;
 }
 
-
 #mainContainer{
     max-width: 60vw;
     margin-top: 6vh;
+    @include media('<=xlarge') 
+    {
+        max-width: 96vw;
+    }
     nav{
         h1{
             text-align: center;
             margin-bottom: 6vh;
             font-family: 'Pacifico', sans-serif ;
             font-size: 92px;
+            @include media('<=medium') 
+            {
+                font-size: 36px;
+            }
         }
     }
     #gameInfoContainer, #gameBoard{
@@ -23,6 +36,9 @@ body{
         font-family: 'Roboto', sans-serif ;
         font-size: 18px;
     }
+    #peerCounter{
+        margin: 1vh 0vh;
+    }
     #gameInfoContainer{
         #progressBar{
             height: 6px;
@@ -30,7 +46,7 @@ body{
             border-radius: 10px;
             margin-bottom: 32px;
         }
-        #timer, #peers{
+        #timer, #peers, #winTimeContainer{
             font-family: 'Pacifico', sans-serif;
             font-size: 32px;
         }
